@@ -1,22 +1,123 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>About — AstroShivraj</title><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Cormorant+Garamond:wght@400;600;700&display=swap" rel="stylesheet">
-<style>:root{--i:#312e81;--v:#8b5cf6;--g:#fbbf24;}*{margin:0;padding:0;box-sizing:border-box;}
-body{font-family:'Inter',sans-serif;background:#0d0c1a;color:#e0e0ff;line-height:2;padding:80px 20px;}
-.container{max-width:800px;margin:0 auto;text-align:center;}
-h1{font-size:4rem;font-family:'Cormorant Garamond';color:var(--g);margin-bottom:60px;}
-p{font-size:1.25rem;opacity:0.9;margin-bottom:30px;}
-.back a{color:var(--v);text-decoration:none;font-weight:500;}
-@media(max-width:960px){h1{font-size:3rem;}}</style>
-</head><body>
-<header style="position:absolute;top:20px;left:20px;"><a href="index.html" style="color:#e0e0ff;text-decoration:none;font-size:1.2rem;">← Home</a></header>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Shivraj — AstroShivraj</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Cormorant+Garamond:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root{--gold:#fbbf24;--violet:#8b5cf6;--indigo:#312e81;--text:#e0e0ff;}
+    *{margin:0;padding:0;box-sizing:border-box;}
+    body{
+      font-family:'Inter',sans-serif;
+      background:#0d0c1a;
+      color:var(--text);
+      line-height:1.8;
+      font-size:17px;
+      background-image:url('data:image/svg+xml;utf8,<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/200200/svg"><circle cx="50" cy="50" r="48" stroke="%23fbbf2422" stroke-width="1" fill="none"/></svg>');
+      background-attachment:fixed;
+    }
+    header{
+      padding:6px 20px;
+      position:fixed;
+      top:0;left:0;right:0;
+      background:#0d0c1a;
+      z-index:10;
+      border-bottom:1px solid rgba(139,92,246,0.2);
+    }
+    nav{
+      max-width:1100px;
+      margin:0 auto;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+    }
+    .logo img{
+      height:90px;
+      width:auto;
+      display:block;
+    }
+    .back a{color:#e0e0ff;text-decoration:none;font-weight:500;font-size:1.1rem;}
+    .back a:hover{color:var(--gold);}
+    .container{max-width:1100px;margin:0 auto;padding:160px 20px 100px;}
+    .grid{display:grid;grid-template-columns:1fr 2fr;gap:70px;align-items:start;}
+    .photo{text-align:center;}
+    .photo img{
+      width:100%;
+      max-width:380px;
+      border-radius:20px;
+      border:4px solid var(--gold);
+      box-shadow:0 20px 40px rgba(0,0,0,0.6);
+    }
+    .text h1{
+      font-family:'Cormorant Garamond',serif;
+      font-size:4rem;
+      color:var(--gold);
+      margin-bottom:30px;
+      text-align:left;
+    }
+    .text p{font-size:1.05rem;margin-bottom:1.8rem;opacity:0.92;}
+    .text p:first-of-type{font-size:1.25rem;font-weight:500;opacity:1;}
+    .video{margin-top:80px;text-align:center;}
+    .video iframe{width:100%;max-width:800px;height:450px;border-radius:20px;border:3px solid var(--gold);}
+    footer{text-align:center;padding:80px 20px;opacity:0.6;font-size:0.95rem;}
+    @media(max-width:900px){
+      .grid{grid-template-columns:1fr;gap:50px;}
+      .text h1{font-size:3.2rem;text-align:center;}
+      .video iframe{height:300px;}
+      header{padding:5px 20px;}
+      .logo img{height:72px;}
+      .container{padding-top:130px;}
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <div class="back">
+      <a href="index.html">← Home</a>
+    </div>
+    <div class="logo">
+      <img src="logo.png" alt="AstroShivraj Logo">
+    </div>
+  </nav>
+</header>
+
 <div class="container">
-<h1>About Shivraj</h1>
-<p>I am no one special — just an IIT graduate who traded code for cosmic patterns.</p>
-<p>For 12 years, I tested Vedic astrology and numerology on friends and family, for free, like debugging algorithms. The results were undeniable.</p>
-<p>What emerged is AstroShivraj: precise life decodes through stars, and a logical path to inner freedom — without dogma or drama.</p>
-<p>No titles. Just tools that work. For those ready to cross the bridge.</p>
-<p>Whoever you are, the stars already know you.</p>
-<div class="back" style="margin-top:60px;"><a href="index.html">← Back</a></div>
+  <div class="grid">
+    <div class="photo">
+      <img src="https://via.placeholder.com/380x500/0d0c1a/ffffff?text=Your+Photo+Here" alt="Shivraj">
+    </div>
+
+    <div class="text">
+      <h1>Shivraj</h1>
+      <p>I am no one special — just a boy from a small town who walked into an IIT campus believing life runs on logic, code, and ambition.</p>
+      <p>While building software for startups and corporates, I quietly kept stumbling into ancient maps — Vedic astrology, Lo Shu numerology, the Gita, Ashtavakra. For over twelve years I tested them on friends, family, and eventually strangers — all for free — the way an engineer runs experiments. The accuracy was impossible to ignore.</p>
+      <p>Saturn returns hit exactly at 28–30. Rahu periods brought the exact illusions predicted. Name spelling changes shifted fortunes within months. I tracked hundreds of charts. The patterns never lied.</p>
+      <p>At some point the seeker himself dissolved. What remained is this space — AstroShivraj — where two things are offered plainly:</p>
+      <p>• <strong>Cosmic Decode</strong> — ruthless, evidence-based astrology & numerology for high-achievers who want clarity on career moves, relationships, wealth cycles, and life timing.</p>
+      <p>• <strong>Wisdom Path</strong> — the final logical inquiry that ends the illusion of a separate self. No rituals. No guru worship. Just permanent freedom.</p>
+      <p>No rudraksha. No titles. No drama.<br>Only patterns that work, and the silence beyond them.</p>
+      <p>Whoever you are — founder, skeptic, seeker — you are already welcome.</p>
+    </div>
+  </div>
+
+  <div class="video">
+  <iframe width="100%" 
+          height="450" 
+          src="https://www.youtube.com/embed/Oe2y_0Cg2ec" 
+          title="Ancient Vedic Astrologer Story - Varahamihira" 
+          frameborder="0" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+          referrerpolicy="strict-origin-when-cross-origin" 
+          allowfullscreen></iframe>
 </div>
-<footer style="text-align:center;padding:100px 20px;opacity:0.6;">© 2025 AstroShivraj</footer>
-</body></html>
+</div>
+
+<footer>
+  © 2025 AstroShivraj • The patterns were always there. I just learned to read them.
+</footer>
+
+</body>
+</html>

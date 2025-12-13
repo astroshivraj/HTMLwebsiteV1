@@ -1,15 +1,140 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Contact — AstroShivraj</title><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<style>:root{--i:#312e81;--v:#8b5cf6;--g:#fbbf24;}*{margin:0;padding:0;box-sizing:border-box;}
-body{font-family:'Inter',sans-serif;background:#0d0c1a;color:#e0e0ff;line-height:1.7;text-align:center;padding:150px 20px;}
-h1{font-size:4rem;color:var(--g);margin-bottom:40px;}
-p{font-size:1.5rem;margin-bottom:40px;}
-a{color:var(--v);text-decoration:none;}
-@media(max-width:960px){h1{font-size:3rem;}}</style>
-</head><body>
-<a href="index.html" style="position:absolute;top:20px;left:20px;color:#e0e0ff;">← Home</a>
-<h1>Contact</h1>
-<p>hello@astroshivraj.in</p>
-<p style="opacity:0.7;">Replies within 48 hours.<br>Clarity awaits.</p>
-<footer style="padding:100px 20px;opacity:0.6;">© 2025 AstroShivraj</footer>
-</body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — AstroShivraj</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Cormorant+Garamond:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{--gold:#fbbf24;--violet:#8b5cf6;--cyan:#00d4ff;--green:#25d366;}
+    *{margin:0;padding:0;box-sizing:border-box;}
+    body{font-family:'Inter',sans-serif;background:#0d0c1a;color:#e0e0ff;line-height:1.8;min-height:100vh;display:flex;flex-direction:column;}
+    header{
+      padding:6px 20px;
+      background:#0d0c1a;
+      position:fixed;
+      top:0;left:0;right:0;
+      z-index:10;
+      border-bottom:1px solid rgba(139,92,246,0.2);
+    }
+    nav{
+      max-width:1200px;
+      margin:auto;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+    }
+    .logo img{
+      height:90px;
+      width:auto;
+      display:block;
+    }
+    .back a{color:#e0e0ff;text-decoration:none;font-weight:500;font-size:1.1rem;}
+    .back a:hover{color:var(--gold);}
+    .container{
+      max-width:1100px;
+      margin:auto;
+      padding:160px 20px 100px;
+      flex:1;
+    }
+    h1{font-family:'Cormorant Garamond',serif;font-size:4.5rem;color:var(--gold);text-align:center;margin-bottom:20px;}
+    .subtitle{font-size:1.4rem;text-align:center;opacity:0.9;margin-bottom:60px;}
+    .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:30px;margin:50px 0;}
+    .card{
+      background:rgba(49,46,129,0.25);
+      border:1px solid rgba(251,191,36,0.3);
+      border-radius:24px;
+      padding:40px 30px;
+      text-align:center;
+      transition:all .4s;
+    }
+    .card:hover{transform:translateY(-12px);box-shadow:0 30px 60px rgba(139,92,246,0.25);}
+    .flag{font-size:3.5rem;margin-bottom:15px;}
+    .card h3{font-size:1.8rem;margin:15px 0;color:var(--gold);}
+    .number{font-size:1.55rem;font-weight:600;margin:15px 0;letter-spacing:1px;}
+    .wa-btn{
+      display:inline-block;
+      background:var(--green);
+      color:white;
+      padding:16px 40px;
+      border-radius:50px;
+      font-size:1.3rem;
+      font-weight:600;
+      margin-top:20px;
+      text-decoration:none;
+      box-shadow:0 8px 20px rgba(37,211,102,0.4);
+    }
+    .wa-btn:hover{transform:scale(1.05);}
+    .email-card{
+      background:linear-gradient(135deg,rgba(139,92,246,0.2),rgba(251,191,36,0.1));
+      grid-column:1/-1;
+    }
+    .email-card a{color:var(--cyan);font-size:1.6rem;font-weight:500;}
+    footer{text-align:center;padding:80px 20px;opacity:0.6;font-size:0.95rem;}
+    @media(max-width:768px){
+      h1{font-size:3.4rem;}
+      .cards{grid-template-columns:1fr;gap:25px;}
+      .wa-btn{font-size:1.2rem;padding:14px 30px;}
+      header{padding:5px 20px;}
+      .logo img{height:72px;}
+      .container{padding-top:130px;}
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <div class="back">
+      <a href="index.html">← Home</a>
+    </div>
+    <div class="logo">
+      <img src="logo.png" alt="AstroShivraj Logo">
+    </div>
+  </nav>
+</header>
+
+<div class="container">
+  <h1>Let’s Connect</h1>
+  <p class="subtitle">Cosmic Decode readings • Wisdom Path inquiries • Any questions<br>Reach me directly on WhatsApp (fastest response)</p>
+
+  <div class="cards">
+
+    <div class="card">
+      <div class="flag">🇮🇳 India</div>
+      <h3>India WhatsApp & Call</h3>
+      <div class="number">+91 97111 11274</div>
+      <a href="https://wa.me/919711111274?text=Namaste%20Shivraj%2C%20I%20would%20like%20to%20book%20a%20Cosmic%20Decode%20reading..." 
+         class="wa-btn" target="_blank">Message on WhatsApp →</a>
+      <p style="margin-top:15px;font-size:0.95rem;opacity:0.8;">10 AM – 10 PM IST • Instant reply</p>
+    </div>
+
+    <div class="card">
+      <div class="flag">🇺🇸 USA</div>
+      <h3>USA WhatsApp & Call</h3>
+      <div class="number">+1 (971) 238-4730</div>
+      <a href="https://wa.me/19712384730?text=Hi%20Shivraj%2C%20I%20found%20you%20online%20and%20would%20love%20to%20know%20more..." 
+         class="wa-btn" target="_blank">Message on WhatsApp →</a>
+      <p style="margin-top:15px;font-size:0.95rem;opacity:0.8;">Perfect for NRIs • Text or call anytime</p>
+    </div>
+
+    <div class="card email-card">
+      <h3 style="font-size:2rem;color:var(--gold);">Prefer Email?</h3>
+      <p><a href="mailto:hello@astroshivraj.in">hello@astroshivraj.in</a></p>
+      <p style="margin-top:15px;opacity:0.8;">Replies within 24–48 hours</p>
+    </div>
+
+  </div>
+
+  <p style="text-align:center;margin-top:70px;font-size:1.1rem;opacity:0.8;">
+    All conversations are 100% confidential.<br>
+    Whether you’re ready for a Cosmic Decode reading or curious about the Wisdom Path — the next step starts with one message.
+  </p>
+</div>
+
+<footer>
+  © 2025 AstroShivraj • The stars answer those who ask.
+</footer>
+
+</body>
+</html>

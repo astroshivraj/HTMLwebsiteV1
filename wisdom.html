@@ -1,28 +1,71 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Wisdom Path — AstroShivraj</title><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Cormorant+Garamond:wght@400;600;700&display=swap" rel="stylesheet">
-<style>:root{--i:#312e81;--v:#8b5cf6;--g:#fbbf24;}*{margin:0;padding:0;box-sizing:border-box;}
-body{font-family:'Inter',sans-serif;background:#0d0c1a;color:#e0e0ff;line-height:1.7;}
-header{padding:40px 20px;background:#0d0c1a;}
-nav{max-width:1280px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;}
-.logo{font-size:2.4rem;font-weight:700;background:linear-gradient(90deg,var(--v),var(--g));-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
-.menu a{color:#e0e0ff;text-decoration:none;margin-left:2rem;font-weight:500;}
-.menu a:hover{color:var(--g);}
-.hero{text-align:center;padding:100px 20px;background:radial-gradient(circle at center,#1e1b4b,#0d0c1a);}
-.hero h1{font-size:5rem;font-weight:700;color:var(--g);font-family:'Cormorant Garamond';}
-.hero p{font-size:1.6rem;margin:30px 0;opacity:0.9;line-height:1.8;}
-.tiers{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:40px;max-width:1000px;margin:80px auto;padding:0 20px;}
-.tier{background:rgba(49,46,129,0.3);border:1px solid var(--g);border-radius:20px;padding:40px;text-align:center;}
-.tier h3{font-size:2rem;color:var(--g);margin-bottom:15px;}
-.tier p{font-size:1.2rem;margin:15px 0;opacity:0.9;}
-.price{font-size:2.8rem;font-weight:700;color:var(--g);margin:20px 0;}
-.btn-w{background:var(--g);color:#0d0c1a;padding:16px 40px;border-radius:50px;display:inline-block;margin-top:20px;font-weight:600;}
-footer{text-align:center;padding:100px 20px;opacity:0.6;}
-@media(max-width:960px){.hero h1{font-size:3.8rem;}}</style>
-</head><body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wisdom Path — AstroShivraj</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Cormorant+Garamond:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{--i:#312e81;--v:#8b5cf6;--g:#fbbf24;}
+    *{margin:0;padding:0;box-sizing:border-box;}
+    body{font-family:'Inter',sans-serif;background:#0d0c1a;color:#e0e0ff;line-height:1.7;}
+    header{
+      padding:6px 20px;
+      background:#0d0c1a;
+      position:fixed;
+      top:0;left:0;right:0;
+      z-index:10;
+      border-bottom:1px solid rgba(139,92,246,0.2);
+    }
+    nav{
+      max-width:1280px;
+      margin:0 auto;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+    }
+    .logo img{
+      height:90px;
+      width:auto;
+      display:block;
+    }
+    .back a{color:#e0e0ff;text-decoration:none;font-weight:500;}
+    .back a:hover{color:var(--g);}
+    .hero{text-align:center;padding:160px 20px;background:radial-gradient(circle at center,#1e1b4b,#0d0c1a);}
+    .hero h1{font-size:5rem;font-weight:700;color:var(--g);font-family:'Cormorant Garamond';}
+    .hero p{font-size:1.6rem;margin:30px 0;opacity:0.9;line-height:1.8;}
+    .tiers{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:40px;max-width:1000px;margin:80px auto;padding:0 20px;}
+    .tier{background:rgba(49,46,129,0.3);border:1px solid var(--g);border-radius:20px;padding:40px;text-align:center;}
+    .tier h3{font-size:2rem;color:var(--g);margin-bottom:15px;}
+    .tier p{font-size:1.2rem;margin:15px 0;opacity:0.9;}
+    .price{font-size:2.8rem;font-weight:700;color:var(--g);margin:20px 0;}
+    .btn-w{background:var(--g);color:#0d0c1a;padding:16px 40px;border-radius:50px;display:inline-block;margin-top:20px;font-weight:600;}
+    footer{text-align:center;padding:100px 20px;opacity:0.6;}
+    @media(max-width:960px){
+      .hero h1{font-size:3.8rem;}
+      .hero{padding-top:130px;}
+      header{padding:5px 20px;}
+      .logo img{height:72px;}
+    }
+  </style>
+</head>
+<body>
 
-<header><nav><div class="logo">AstroShivraj</div><div class="menu"><a href="index.html">← Home</a></div></nav></header>
+<header>
+  <nav>
+    <div class="back">
+      <a href="index.html">← Home</a>
+    </div>
+    <div class="logo">
+      <img src="logo.png" alt="AstroShivraj Logo">
+    </div>
+  </nav>
+</header>
 
-<section class="hero"><h1>Wisdom Path</h1><p>The end of seeking.<br>Logical liberation from the illusion of self — systematic, secular, sovereign.</p></section>
+<section class="hero">
+  <h1>Wisdom Path</h1>
+  <p>The end of seeking.<br>Logical liberation from the illusion of self — systematic, secular, sovereign.</p>
+</section>
 
 <div class="tiers">
   <div class="tier">
@@ -37,17 +80,23 @@ footer{text-align:center;padding:100px 20px;opacity:0.6;}
     <p>4 months • Group (max 8) • Weekly calls</p>
     <div class="price">₹1,40,000</div>
     <p style="font-size:0.9rem;opacity:0.8;">Next: Feb 2026</p>
-    <a href="contact.html"  class="btn-w">Join Waitlist →</a>
+    <a href="contact.html" class="btn-w">Join Waitlist →</a>
   </div>
   <div class="tier">
     <h3>Self-Paced OS</h3>
     <p>Framework + templates + updates</p>
     <div class="price">₹24,000</div>
-    <a href="contact.html"  class="btn-w">Get Access →</a>
+    <a href="contact.html" class="btn-w">Get Access →</a>
   </div>
 </div>
 
-<p style="text-align:center;max-width:800px;margin:100px auto;padding:0 20px;font-size:1.1rem;opacity:0.7;">This is the bridge from logic to liberation. No gurus. Just clarity.</p>
+<p style="text-align:center;max-width:800px;margin:100px auto;padding:0 20px;font-size:1.1rem;opacity:0.7;">
+This is the bridge from logic to liberation. No gurus. Just clarity.
+</p>
 
-<footer>© 2025 AstroShivraj • Walked by Shivraj.</footer>
-</body></html>
+<footer>
+  © 2025 AstroShivraj • Walked by Shivraj.
+</footer>
+
+</body>
+</html>
