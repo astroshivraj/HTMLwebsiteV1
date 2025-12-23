@@ -9,64 +9,30 @@
     :root{--navy:#0a0a1f;--cyan:#00d4ff;--g:#fbbf24;}
     *{margin:0;padding:0;box-sizing:border-box;}
     body{font-family:'Inter',sans-serif;background:var(--navy);color:#e0e0ff;line-height:1.7;}
-    header{
-      padding:6px 20px;
-      background:var(--navy);
-      position:fixed;
-      top:0;left:0;right:0;
-      z-index:10;
-      border-bottom:1px solid rgba(0,212,255,0.2);
-    }
-    nav{
-      max-width:1280px;
-      margin:0 auto;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-    }
-    .logo img{
-      height:90px;
-      width:auto;
-      display:block;
-    }
-    .menu{
-      display:flex;
-      gap:3rem;
-      align-items:center;
-    }
-    .menu a{
-      color:#e0e0ff;
-      text-decoration:none;
-      font-weight:500;
-      font-size:1.05rem;
-      transition:color .3s;
-      white-space:nowrap;
-    }
-    .menu a:hover{color:var(--cyan);}
+    
+    /* Same header CSS as index.html */
+    header{padding:10px 20px;background:var(--navy);position:fixed;top:0;left:0;right:0;z-index:1000;border-bottom:1px solid rgba(0,212,255,0.2);}
+    nav{max-width:1280px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;}
+    .logo img{height:72px;width:auto;display:block;}
+    .menu-desktop{display:flex;gap:2.5rem;align-items:center;}
+    .menu-desktop a{color:#e0e0ff;text-decoration:none;font-weight:500;font-size:1.05rem;transition:color .3s;}
+    .menu-desktop a:hover{color:var(--cyan);}
     .dropdown{position:relative;}
     .dropdown:hover .dropdown-content{display:block;}
-    .dropdown-content{
-      display:none;
-      position:absolute;
-      top:100%;
-      left:50%;
-      transform:translateX(-50%);
-      background:var(--navy);
-      min-width:200px;
-      box-shadow:0 8px 16px rgba(0,0,0,0.5);
-      border-radius:10px;
-      padding:10px 0;
-      border:1px solid rgba(0,212,255,0.2);
-    }
-    .dropdown-content a{
-      display:block;
-      padding:10px 20px;
-      color:#e0e0ff;
-    }
+    .dropdown-content{display:none;position:absolute;top:100%;left:50%;transform:translateX(-50%);background:var(--navy);min-width:200px;box-shadow:0 8px 16px rgba(0,0,0,0.5);border-radius:10px;padding:10px 0;border:1px solid rgba(0,212,255,0.2);}
+    .dropdown-content a{display:block;padding:12px 20px;color:#e0e0ff;}
     .dropdown-content a:hover{background:rgba(0,212,255,0.2);color:var(--cyan);}
-    .hero{text-align:center;padding:160px 20px 100px;background:linear-gradient(135deg,var(--navy),#0a0a1f);}
-    .hero h1{font-size:5rem;font-weight:700;background:linear-gradient(90deg,var(--cyan),var(--g));-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+    .hamburger{display:none;flex-direction:column;gap:6px;cursor:pointer;}
+    .hamburger span{width:30px;height:3px;background:var(--cyan);transition:0.3s;}
+    .mobile-menu{display:none;position:absolute;top:100%;left:0;right:0;background:var(--navy);border-top:1px solid rgba(0,212,255,0.3);flex-direction:column;padding:20px;text-align:center;}
+    .mobile-menu a{padding:15px;font-size:1.2rem;color:#e0e0ff;text-decoration:none;}
+    .mobile-menu a:hover{color:var(--cyan);}
+    .mobile-menu.active{display:flex;}
+
+    .hero{text-align:center;padding:140px 20px 80px;background:linear-gradient(135deg,var(--navy),#0a0a1f);}
+    .hero h1{font-size:clamp(3rem,8vw,5rem);font-weight:700;background:linear-gradient(90deg,var(--cyan),var(--g));-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
     .hero p{font-size:1.6rem;margin:30px 0;opacity:0.9;}
+
     .tier{background:rgba(10,10,31,0.6);border:1px solid var(--cyan);border-radius:20px;padding:50px;margin:60px auto;max-width:800px;text-align:center;}
     .tier h2{font-size:2.8rem;color:var(--g);margin-bottom:20px;}
     .tier p{font-size:1.3rem;margin:20px 0;opacity:0.9;}
@@ -74,13 +40,13 @@
     .btn{background:linear-gradient(45deg,var(--cyan),#00b4d8);color:var(--navy);padding:18px 50px;border-radius:50px;font-size:1.3rem;text-decoration:none;display:inline-block;transition:.3s;}
     .btn:hover{transform:scale(1.05);}
     footer{text-align:center;padding:100px 20px;opacity:0.6;}
-    @media(max-width:960px){
-      .hero h1{font-size:3.8rem;}
-      .hero{padding-top:130px;}
-      header{padding:5px 20px;}
-      .logo img{height:72px;}
-      .menu{gap:1.5rem;}
-      .menu a{font-size:0.95rem;}
+
+    @media(max-width:968px){
+      .menu-desktop{display:none;}
+      .hamburger{display:flex;}
+      .logo img{height:60px;}
+      header{padding:8px 15px;}
+      .hero{padding-top:120px;}
     }
   </style>
 </head>
@@ -89,12 +55,12 @@
 <header>
   <nav>
     <div class="logo">
-      <img src="logo.png" alt="AstroShivraj Logo">
+      <a href="index.html"><img src="logo.png" alt="AstroShivraj Logo"></a>
     </div>
-    <div class="menu">
+    <div class="menu-desktop">
       <a href="index.html">Home</a>
       <div class="dropdown">
-        <a href="#">Services</a>
+        <a href="#">Services ▾</a>
         <div class="dropdown-content">
           <a href="cosmic.html">Cosmic Decode</a>
           <a href="wisdom.html">Wisdom Path</a>
@@ -104,7 +70,18 @@
       <a href="about.html">About</a>
       <a href="contact.html">Contact</a>
     </div>
+    <div class="hamburger">
+      <span></span><span></span><span></span>
+    </div>
   </nav>
+  <div class="mobile-menu">
+    <a href="index.html">Home</a>
+    <a href="cosmic.html">Cosmic Decode</a>
+    <a href="wisdom.html">Wisdom Path</a>
+    <a href="knowledge.html">Knowledge Base</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </div>
 </header>
 
 <section class="hero">
@@ -125,5 +102,10 @@
   © 2025 AstroShivraj • Decoded by Shivraj.
 </footer>
 
+<script>
+  document.querySelector('.hamburger').addEventListener('click', function(){
+    document.querySelector('.mobile-menu').classList.toggle('active');
+  });
+</script>
 </body>
 </html>

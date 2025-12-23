@@ -8,80 +8,50 @@
   <style>
     :root{--gold:#fbbf24;--violet:#8b5cf6;--indigo:#312e81;}
     *{margin:0;padding:0;box-sizing:border-box;}
-    body{font-family:'Inter',sans-serif;background:#0d0c1a;color:#e0e0ff;line-height:1.7;overflow-x:hidden;}
-    header{
-      padding:6px 20px;
-      background:#0d0c1a;
-      position:fixed;
-      top:0;left:0;right:0;
-      z-index:10;
-      border-bottom:1px solid rgba(139,92,246,0.2);
-    }
-    nav{
-      max-width:1280px;
-      margin:0 auto;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-    }
-    .logo img{
-      height:90px;
-      width:auto;
-      display:block;
-    }
-    .menu{
-      display:flex;
-      gap:3rem;
-      align-items:center;
-    }
-    .menu a{
-      color:#e0e0ff;
-      text-decoration:none;
-      font-weight:500;
-      font-size:1.05rem;
-      transition:color .3s;
-      white-space:nowrap;
-    }
-    .menu a:hover{color:var(--gold);}
+    body{font-family:'Inter',sans-serif;background:#0d0c1a;color:#e0e0ff;line-height:1.7;}
+    
+    /* Same header as index.html */
+    header{padding:10px 20px;background:#0d0c1a;position:fixed;top:0;left:0;right:0;z-index:1000;border-bottom:1px solid rgba(139,92,246,0.2);}
+    nav{max-width:1280px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;}
+    .logo img{height:72px;width:auto;display:block;}
+    .menu-desktop{display:flex;gap:2.5rem;align-items:center;}
+    .menu-desktop a{color:#e0e0ff;text-decoration:none;font-weight:500;font-size:1.05rem;transition:color .3s;}
+    .menu-desktop a:hover{color:var(--gold);}
     .dropdown{position:relative;}
     .dropdown:hover .dropdown-content{display:block;}
-    .dropdown-content{
-      display:none;
-      position:absolute;
-      top:100%;
-      left:50%;
-      transform:translateX(-50%);
-      background:#0d0c1a;
-      min-width:200px;
-      box-shadow:0 8px 16px rgba(0,0,0,0.5);
-      border-radius:10px;
-      padding:10px 0;
-      border:1px solid rgba(139,92,246,0.2);
-    }
-    .dropdown-content a{
-      display:block;
-      padding:10px 20px;
-      color:#e0e0ff;
-    }
+    .dropdown-content{display:none;position:absolute;top:100%;left:50%;transform:translateX(-50%);background:#0d0c1a;min-width:200px;box-shadow:0 8px 16px rgba(0,0,0,0.5);border-radius:10px;padding:10px 0;border:1px solid rgba(139,92,246,0.2);}
+    .dropdown-content a{display:block;padding:12px 20px;color:#e0e0ff;}
     .dropdown-content a:hover{background:rgba(139,92,246,0.2);color:var(--gold);}
-    .hero{text-align:center;padding:160px 20px;background:radial-gradient(circle at center,#1e1b4b,#0d0c1a);}
-    .hero h1{font-size:5rem;font-weight:700;color:var(--gold);font-family:'Cormorant Garamond';}
+    .hamburger{display:none;flex-direction:column;gap:6px;cursor:pointer;}
+    .hamburger span{width:30px;height:3px;background:var(--gold);transition:0.3s;}
+    .mobile-menu{display:none;position:absolute;top:100%;left:0;right:0;background:#0d0c1a;border-top:1px solid rgba(139,92,246,0.3);flex-direction:column;padding:20px;text-align:center;}
+    .mobile-menu a{padding:15px;font-size:1.2rem;color:#e0e0ff;text-decoration:none;}
+    .mobile-menu a:hover{color:var(--gold);}
+    .mobile-menu.active{display:flex;}
+
+    .hero{text-align:center;padding:140px 20px;background:radial-gradient(circle at center,#1e1b4b,#0d0c1a);}
+    .hero h1{font-size:clamp(3rem,8vw,5rem);font-weight:700;color:var(--gold);font-family:'Cormorant Garamond',serif;}
     .hero p{font-size:1.6rem;margin:30px 0;opacity:0.9;line-height:1.8;}
-    .tiers{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:40px;max-width:1000px;margin:80px auto;padding:0 20px;}
+
+    .tiers{display:grid;grid-template-columns:1fr;gap:40px;max-width:1000px;margin:80px auto;padding:0 20px;}
     .tier{background:rgba(49,46,129,0.3);border:1px solid var(--gold);border-radius:20px;padding:40px;text-align:center;}
     .tier h3{font-size:2rem;color:var(--gold);margin-bottom:15px;}
     .tier p{font-size:1.2rem;margin:15px 0;opacity:0.9;}
     .price{font-size:2.8rem;font-weight:700;color:var(--gold);margin:20px 0;}
-    .btn-w{background:var(--gold);color:#0d0c1a;padding:16px 40px;border-radius:50px;display:inline-block;margin-top:20px;font-weight:600;}
+    .btn-w{background:var(--gold);color:#0d0c1a;padding:16px 40px;border-radius:50px;display:inline-block;margin-top:20px;font-weight:600;text-decoration:none;}
+    .btn-w:hover{opacity:0.9;}
     .closing{max-width:800px;margin:100px auto;text-align:center;font-size:1.1rem;opacity:0.7;padding:0 20px;}
     footer{text-align:center;padding:100px 20px;opacity:0.6;}
-    @media(max-width:960px){
-      .hero h1{font-size:3.8rem;}
-      .hero{padding-top:130px;}
-      header{padding:5px 20px;}
-      .logo img{height:72px;}
-      .menu{gap:1.5rem;}
-      .menu a{font-size:0.95rem;}
+
+    @media(min-width:768px){
+      .tiers{grid-template-columns:repeat(auto-fit,minmax(300px,1fr));}
+    }
+    @media(max-width:968px){
+      .menu-desktop{display:none;}
+      .hamburger{display:flex;}
+      .logo img{height:60px;}
+      header{padding:8px 15px;}
+      .hero{padding-top:120px;}
     }
   </style>
 </head>
@@ -90,12 +60,12 @@
 <header>
   <nav>
     <div class="logo">
-      <img src="logo.png" alt="AstroShivraj Logo">
+      <a href="index.html"><img src="logo.png" alt="AstroShivraj Logo"></a>
     </div>
-    <div class="menu">
+    <div class="menu-desktop">
       <a href="index.html">Home</a>
       <div class="dropdown">
-        <a href="#">Services</a>
+        <a href="#">Services ▾</a>
         <div class="dropdown-content">
           <a href="cosmic.html">Cosmic Decode</a>
           <a href="wisdom.html">Wisdom Path</a>
@@ -105,7 +75,18 @@
       <a href="about.html">About</a>
       <a href="contact.html">Contact</a>
     </div>
+    <div class="hamburger">
+      <span></span><span></span><span></span>
+    </div>
   </nav>
+  <div class="mobile-menu">
+    <a href="index.html">Home</a>
+    <a href="cosmic.html">Cosmic Decode</a>
+    <a href="wisdom.html">Wisdom Path</a>
+    <a href="knowledge.html">Knowledge Base</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </div>
 </header>
 
 <section class="hero">
@@ -146,5 +127,10 @@
   © 2025 AstroShivraj • Walked together.
 </footer>
 
+<script>
+  document.querySelector('.hamburger').addEventListener('click', function(){
+    document.querySelector('.mobile-menu').classList.toggle('active');
+  });
+</script>
 </body>
 </html>

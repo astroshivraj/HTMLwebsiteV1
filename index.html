@@ -9,12 +9,13 @@
     :root{--gold:#fbbf24;--violet:#8b5cf6;--indigo:#312e81;}
     *{margin:0;padding:0;box-sizing:border-box;}
     body{font-family:'Inter',sans-serif;background:#0d0c1a;color:#e0e0ff;line-height:1.7;overflow-x:hidden;}
+    
     header{
-      padding:6px 20px;
+      padding:10px 20px;
       background:#0d0c1a;
       position:fixed;
       top:0;left:0;right:0;
-      z-index:10;
+      z-index:1000;
       border-bottom:1px solid rgba(139,92,246,0.2);
     }
     nav{
@@ -24,25 +25,20 @@
       justify-content:space-between;
       align-items:center;
     }
-    .logo img{
-      height:90px;
-      width:auto;
-      display:block;
-    }
-    .menu{
+    .logo img{height:72px;width:auto;display:block;}
+    .menu-desktop{
       display:flex;
-      gap:3rem;
+      gap:2.5rem;
       align-items:center;
     }
-    .menu a{
+    .menu-desktop a{
       color:#e0e0ff;
       text-decoration:none;
       font-weight:500;
       font-size:1.05rem;
       transition:color .3s;
-      white-space:nowrap;
     }
-    .menu a:hover{color:var(--gold);}
+    .menu-desktop a:hover{color:var(--gold);}
     .dropdown{position:relative;}
     .dropdown:hover .dropdown-content{display:block;}
     .dropdown-content{
@@ -60,24 +56,61 @@
     }
     .dropdown-content a{
       display:block;
-      padding:10px 20px;
+      padding:12px 20px;
+      color:#e0e0ff;
+    }
+    .dropdown-content a:hover{background:rgba(139,92,246,0.2);color:var(--gold);}
+
+    .hamburger{
+      display:none;
+      flex-direction:column;
+      gap:6px;
+      cursor:pointer;
+    }
+    .hamburger span{
+      width:30px;
+      height:3px;
+      background:var(--gold);
+      transition:0.3s;
+    }
+    .mobile-menu{
+      display:none;
+      position:absolute;
+      top:100%;
+      left:0;
+      right:0;
+      background:#0d0c1a;
+      border-top:1px solid rgba(139,92,246,0.3);
+      flex-direction:column;
+      padding:20px;
+      text-align:center;
+    }
+    .mobile-menu a{
+      padding:15px;
+      font-size:1.2rem;
       color:#e0e0ff;
       text-decoration:none;
     }
-    .dropdown-content a:hover{background:rgba(139,92,246,0.2);color:var(--gold);}
-    .hero{text-align:center;padding:160px 20px 80px;background:radial-gradient(circle at center,#1e1b4b,#0d0c1a);}
-    .hero h1{font-size:5.8rem;font-weight:700;background:linear-gradient(90deg,#c4b5fd,var(--gold));-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:20px;}
-    .hero p{font-size:1.9rem;font-weight:300;opacity:0.9;margin-bottom:40px;}
-    .intro{max-width:900px;margin:0 auto 100px;text-align:center;font-size:1.3rem;opacity:0.9;line-height:1.8;}
-    .features{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:40px;max-width:1200px;margin:0 auto 120px;padding:0 40px;}
+    .mobile-menu a:hover{color:var(--gold);}
+    .mobile-menu.active{display:flex;}
+
+    .hero{text-align:center;padding:140px 20px 60px;background:radial-gradient(circle at center,#1e1b4b,#0d0c1a);}
+    .hero h1{font-size:clamp(2.8rem,8vw,5.8rem);font-weight:700;background:linear-gradient(90deg,#c4b5fd,var(--gold));-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:20px;}
+    .hero p{font-size:clamp(1.3rem,4vw,1.9rem);opacity:0.9;margin-bottom:40px;}
+
+    .intro{max-width:900px;margin:0 auto 80px;padding:0 20px;font-size:clamp(1.1rem,3vw,1.3rem);text-align:center;opacity:0.9;line-height:1.8;}
+
+    .features{display:grid;grid-template-columns:1fr;gap:30px;padding:0 20px;margin-bottom:80px;}
     .feature{background:rgba(49,46,129,0.25);border-radius:20px;padding:40px;text-align:center;border:1px solid rgba(251,191,36,0.2);}
     .feature h3{font-size:2rem;color:var(--gold);margin-bottom:20px;}
     .feature p{font-size:1.15rem;opacity:0.9;}
+
     .quote{max-width:900px;margin:100px auto;text-align:center;font-size:1.6rem;font-style:italic;opacity:0.85;line-height:1.8;padding:0 20px;}
-    .doors{display:grid;grid-template-columns:1fr 1fr;gap:70px;max-width:1300px;margin:100px auto;padding:0 40px;}
+
+    .doors{display:grid;grid-template-columns:1fr;gap:50px;padding:0 20px;margin:100px auto;}
     .door{background:rgba(49,46,129,0.25);border-radius:28px;overflow:hidden;border:1px solid rgba(139,92,246,0.3);transition:all .5s;}
     .door:hover{transform:translateY(-20px);box-shadow:0 40px 80px rgba(139,92,246,0.35);}
-    .img{height:360px;background-size:cover;background-position:center;position:relative;}
+    .img{height:300px;background-size:cover;background-position:center;position:relative;}
     .img::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(13,12,26,0.95));}
     #cosmic{background-image:url('https://images.unsplash.com/photo-1462332420958-a05d1e3aba8a?w=1600');}
     #wisdom{background-image:url('https://images.unsplash.com/photo-1506318137071-a8e063b4bec0?w=1600');}
@@ -89,15 +122,20 @@
     .btn-w{background:transparent;border:1px solid var(--gold);color:var(--gold);}
     .btn-w:hover{background:var(--gold);color:#0d0c1a;}
     footer{text-align:center;padding:120px 20px;opacity:0.6;font-size:0.95rem;}
-    @media(max-width:960px){
-      .doors{grid-template-columns:1fr;gap:60px;padding:0 20px;}
-      .hero h1{font-size:4.2rem;}.hero p{font-size:1.5rem;}
-      .hero{padding-top:130px;}
-      header{padding:5px 20px;}
-      .logo img{height:72px;}
-      .menu{gap:1.5rem;}
-      .menu a{font-size:0.95rem;}
-      .features{grid-template-columns:1fr;padding:0 20px;}
+
+    @media(min-width:768px){
+      .features{grid-template-columns:repeat(auto-fit,minmax(300px,1fr));}
+      .img{height:360px;}
+    }
+    @media(min-width:900px){
+      .doors{grid-template-columns:1fr 1fr;gap:70px;}
+    }
+    @media(max-width:968px){
+      .menu-desktop{display:none;}
+      .hamburger{display:flex;}
+      .logo img{height:60px;}
+      header{padding:8px 15px;}
+      .hero{padding-top:120px;}
     }
   </style>
 </head>
@@ -106,12 +144,12 @@
 <header>
   <nav>
     <div class="logo">
-      <img src="logo.png" alt="AstroShivraj Logo">
+      <a href="index.html"><img src="logo.png" alt="AstroShivraj Logo"></a>
     </div>
-    <div class="menu">
+    <div class="menu-desktop">
       <a href="index.html">Home</a>
       <div class="dropdown">
-        <a href="#">Services</a>
+        <a href="#">Services ▾</a>
         <div class="dropdown-content">
           <a href="cosmic.html">Cosmic Decode</a>
           <a href="wisdom.html">Wisdom Path</a>
@@ -121,7 +159,18 @@
       <a href="about.html">About</a>
       <a href="contact.html">Contact</a>
     </div>
+    <div class="hamburger">
+      <span></span><span></span><span></span>
+    </div>
   </nav>
+  <div class="mobile-menu">
+    <a href="index.html">Home</a>
+    <a href="cosmic.html">Cosmic Decode</a>
+    <a href="wisdom.html">Wisdom Path</a>
+    <a href="knowledge.html">Knowledge Base</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </div>
 </header>
 
 <section class="hero">
@@ -179,5 +228,10 @@
   © 2025 AstroShivraj • Patterns decoded. Futures unlocked.
 </footer>
 
+<script>
+  document.querySelector('.hamburger').addEventListener('click', function(){
+    document.querySelector('.mobile-menu').classList.toggle('active');
+  });
+</script>
 </body>
 </html>

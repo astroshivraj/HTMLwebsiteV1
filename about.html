@@ -8,99 +8,50 @@
   <style>
     :root{--gold:#fbbf24;--violet:#8b5cf6;--indigo:#312e81;--text:#e0e0ff;}
     *{margin:0;padding:0;box-sizing:border-box;}
-    body{
-      font-family:'Inter',sans-serif;
-      background:#0d0c1a;
-      color:var(--text);
-      line-height:1.8;
-      font-size:17px;
-      background-image:url('data:image/svg+xml;utf8,<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/200200/svg"><circle cx="50" cy="50" r="48" stroke="%23fbbf2422" stroke-width="1" fill="none"/></svg>');
-      background-attachment:fixed;
-    }
-    header{
-      padding:6px 20px;
-      background:#0d0c1a;
-      position:fixed;
-      top:0;left:0;right:0;
-      z-index:10;
-      border-bottom:1px solid rgba(139,92,246,0.2);
-    }
-    nav{
-      max-width:1280px;
-      margin:0 auto;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-    }
-    .logo img{
-      height:90px;
-      width:auto;
-      display:block;
-    }
-    .menu{
-      display:flex;
-      gap:3rem;
-      align-items:center;
-    }
-    .menu a{
-      color:#e0e0ff;
-      text-decoration:none;
-      font-weight:500;
-      font-size:1.05rem;
-      transition:color .3s;
-      white-space:nowrap;
-    }
-    .menu a:hover{color:var(--gold);}
+    body{font-family:'Inter',sans-serif;background:#0d0c1a;color:var(--text);line-height:1.8;font-size:17px;}
+    
+    /* Same header as before */
+    header{padding:10px 20px;background:#0d0c1a;position:fixed;top:0;left:0;right:0;z-index:1000;border-bottom:1px solid rgba(139,92,246,0.2);}
+    nav{max-width:1280px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;}
+    .logo img{height:72px;width:auto;display:block;}
+    .menu-desktop{display:flex;gap:2.5rem;align-items:center;}
+    .menu-desktop a{color:#e0e0ff;text-decoration:none;font-weight:500;font-size:1.05rem;transition:color .3s;}
+    .menu-desktop a:hover{color:var(--gold);}
     .dropdown{position:relative;}
     .dropdown:hover .dropdown-content{display:block;}
-    .dropdown-content{
-      display:none;
-      position:absolute;
-      top:100%;
-      left:50%;
-      transform:translateX(-50%);
-      background:#0d0c1a;
-      min-width:200px;
-      box-shadow:0 8px 16px rgba(0,0,0,0.5);
-      border-radius:10px;
-      padding:10px 0;
-      border:1px solid rgba(139,92,246,0.2);
-    }
-    .dropdown-content a{
-      display:block;
-      padding:10px 20px;
-      color:#e0e0ff;
-    }
+    .dropdown-content{display:none;position:absolute;top:100%;left:50%;transform:translateX(-50%);background:#0d0c1a;min-width:200px;box-shadow:0 8px 16px rgba(0,0,0,0.5);border-radius:10px;padding:10px 0;border:1px solid rgba(139,92,246,0.2);}
+    .dropdown-content a{display:block;padding:12px 20px;color:#e0e0ff;}
     .dropdown-content a:hover{background:rgba(139,92,246,0.2);color:var(--gold);}
-    .container{max-width:1100px;margin:0 auto;padding:160px 20px 100px;}
-    .grid{display:grid;grid-template-columns:1fr 2fr;gap:70px;align-items:start;}
-    .photo{text-align:center;}
-    .photo img{
-      width:100%;
-      max-width:380px;
-      border-radius:20px;
-      border:4px solid var(--gold);
-      box-shadow:0 20px 40px rgba(0,0,0,0.6);
-    }
-    .text h1{
-      font-family:'Cormorant Garamond',serif;
-      font-size:4rem;
-      color:var(--gold);
-      margin-bottom:30px;
-      text-align:left;
-    }
+    .hamburger{display:none;flex-direction:column;gap:6px;cursor:pointer;}
+    .hamburger span{width:30px;height:3px;background:var(--gold);}
+    .mobile-menu{display:none;position:absolute;top:100%;left:0;right:0;background:#0d0c1a;border-top:1px solid rgba(139,92,246,0.3);flex-direction:column;padding:20px;text-align:center;}
+    .mobile-menu a{padding:15px;font-size:1.2rem;color:#e0e0ff;text-decoration:none;}
+    .mobile-menu a:hover{color:var(--gold);}
+    .mobile-menu.active{display:flex;}
+
+    .container{max-width:1100px;margin:0 auto;padding:140px 20px 100px;}
+    .grid{display:grid;grid-template-columns:1fr;gap:50px;align-items:start;text-align:center;}
+    .photo img{width:100%;max-width:320px;border-radius:20px;border:4px solid var(--gold);box-shadow:0 20px 40px rgba(0,0,0,0.6);}
+    .text h1{font-family:'Cormorant Garamond',serif;font-size:clamp(2.8rem,8vw,4rem);color:var(--gold);margin-bottom:30px;}
     .text p{font-size:1.05rem;margin-bottom:1.8rem;opacity:0.92;}
     .text p:first-of-type{font-size:1.25rem;font-weight:500;opacity:1;}
     .video{margin-top:80px;text-align:center;}
     .video iframe{width:100%;max-width:800px;height:450px;border-radius:20px;border:3px solid var(--gold);}
     footer{text-align:center;padding:80px 20px;opacity:0.6;font-size:0.95rem;}
-    @media(max-width:900px){
-      .grid{grid-template-columns:1fr;gap:50px;}
-      .text h1{font-size:3.2rem;text-align:center;}
+
+    @media(min-width:900px){
+      .grid{grid-template-columns:1fr 2fr;gap:70px;text-align:left;}
+      .video iframe{height:450px;}
+    }
+    @media(max-width:968px){
+      .menu-desktop{display:none;}
+      .hamburger{display:flex;}
+      .logo img{height:60px;}
+      header{padding:8px 15px;}
+      .container{padding-top:120px;}
+    }
+    @media(max-width:600px){
       .video iframe{height:300px;}
-      header{padding:5px 20px;}
-      .logo img{height:72px;}
-      .container{padding-top:130px;}
     }
   </style>
 </head>
@@ -109,12 +60,12 @@
 <header>
   <nav>
     <div class="logo">
-      <img src="logo.png" alt="AstroShivraj Logo">
+      <a href="index.html"><img src="logo.png" alt="AstroShivraj Logo"></a>
     </div>
-    <div class="menu">
+    <div class="menu-desktop">
       <a href="index.html">Home</a>
       <div class="dropdown">
-        <a href="#">Services</a>
+        <a href="#">Services ▾</a>
         <div class="dropdown-content">
           <a href="cosmic.html">Cosmic Decode</a>
           <a href="wisdom.html">Wisdom Path</a>
@@ -124,7 +75,18 @@
       <a href="about.html">About</a>
       <a href="contact.html">Contact</a>
     </div>
+    <div class="hamburger">
+      <span></span><span></span><span></span>
+    </div>
   </nav>
+  <div class="mobile-menu">
+    <a href="index.html">Home</a>
+    <a href="cosmic.html">Cosmic Decode</a>
+    <a href="wisdom.html">Wisdom Path</a>
+    <a href="knowledge.html">Knowledge Base</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </div>
 </header>
 
 <div class="container">
@@ -147,7 +109,7 @@
   </div>
 
   <div class="video">
-    <iframe src="https://www.youtube.com/watch?v=eCQnGMrvaPw" 
+    <iframe src="https://www.youtube.com/embed/eCQnGMrvaPw" 
             title="Shivraj Introduction" 
             frameborder="0" 
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
@@ -159,5 +121,10 @@
   © 2025 AstroShivraj • The patterns were always there. I just learned to read them.
 </footer>
 
+<script>
+  document.querySelector('.hamburger').addEventListener('click', function(){
+    document.querySelector('.mobile-menu').classList.toggle('active');
+  });
+</script>
 </body>
 </html>
