@@ -3,19 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cosmic Decode — AstroShivraj</title>
+  <title>Knowledge Base — AstroShivraj</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Cormorant+Garamond:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
-    :root{--navy:#0a0a1f;--cyan:#00d4ff;--g:#fbbf24;}
+    :root{--gold:#fbbf24;--violet:#8b5cf6;--indigo:#312e81;}
     *{margin:0;padding:0;box-sizing:border-box;}
-    body{font-family:'Inter',sans-serif;background:var(--navy);color:#e0e0ff;line-height:1.7;}
+    body{font-family:'Inter',sans-serif;background:#0d0c1a;color:#e0e0ff;line-height:1.7;overflow-x:hidden;}
     header{
       padding:6px 20px;
-      background:var(--navy);
+      background:#0d0c1a;
       position:fixed;
       top:0;left:0;right:0;
       z-index:10;
-      border-bottom:1px solid rgba(0,212,255,0.2);
+      border-bottom:1px solid rgba(139,92,246,0.2);
     }
     nav{
       max-width:1280px;
@@ -42,7 +42,7 @@
       transition:color .3s;
       white-space:nowrap;
     }
-    .menu a:hover{color:var(--cyan);}
+    .menu a:hover{color:var(--gold);}
     .dropdown{position:relative;}
     .dropdown:hover .dropdown-content{display:block;}
     .dropdown-content{
@@ -51,36 +51,61 @@
       top:100%;
       left:50%;
       transform:translateX(-50%);
-      background:var(--navy);
+      background:#0d0c1a;
       min-width:200px;
       box-shadow:0 8px 16px rgba(0,0,0,0.5);
       border-radius:10px;
       padding:10px 0;
-      border:1px solid rgba(0,212,255,0.2);
+      border:1px solid rgba(139,92,246,0.2);
     }
     .dropdown-content a{
       display:block;
       padding:10px 20px;
       color:#e0e0ff;
     }
-    .dropdown-content a:hover{background:rgba(0,212,255,0.2);color:var(--cyan);}
-    .hero{text-align:center;padding:160px 20px 100px;background:linear-gradient(135deg,var(--navy),#0a0a1f);}
-    .hero h1{font-size:5rem;font-weight:700;background:linear-gradient(90deg,var(--cyan),var(--g));-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
-    .hero p{font-size:1.6rem;margin:30px 0;opacity:0.9;}
-    .tier{background:rgba(10,10,31,0.6);border:1px solid var(--cyan);border-radius:20px;padding:50px;margin:60px auto;max-width:800px;text-align:center;}
-    .tier h2{font-size:2.8rem;color:var(--g);margin-bottom:20px;}
-    .tier p{font-size:1.3rem;margin:20px 0;opacity:0.9;}
-    .price{font-size:3.2rem;font-weight:700;color:var(--cyan);margin:30px 0;}
-    .btn{background:linear-gradient(45deg,var(--cyan),#00b4d8);color:var(--navy);padding:18px 50px;border-radius:50px;font-size:1.3rem;text-decoration:none;display:inline-block;transition:.3s;}
-    .btn:hover{transform:scale(1.05);}
+    .dropdown-content a:hover{background:rgba(139,92,246,0.2);color:var(--gold);}
+    .content{
+      max-width:900px;
+      margin:160px auto 100px;
+      padding:0 20px;
+      text-align:center;
+    }
+    h1{
+      font-family:'Cormorant Garamond',serif;
+      font-size:4.5rem;
+      color:var(--gold);
+      margin-bottom:40px;
+    }
+    .resources{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+      gap:40px;
+      margin:60px 0;
+    }
+    .resource{
+      background:rgba(49,46,129,0.25);
+      border-radius:20px;
+      padding:40px;
+      text-align:center;
+      border:1px solid rgba(251,191,36,0.2);
+    }
+    .resource h3{
+      font-size:2rem;
+      color:var(--gold);
+      margin-bottom:20px;
+    }
+    .resource a{
+      color:#00d4ff;
+      font-size:1.3rem;
+      text-decoration:none;
+    }
+    .resource a:hover{text-decoration:underline;}
     footer{text-align:center;padding:100px 20px;opacity:0.6;}
     @media(max-width:960px){
-      .hero h1{font-size:3.8rem;}
-      .hero{padding-top:130px;}
+      h1{font-size:3.5rem;}
       header{padding:5px 20px;}
       .logo img{height:72px;}
-      .menu{gap:1.5rem;}
-      .menu a{font-size:0.95rem;}
+      .content{padding-top:130px;}
     }
   </style>
 </head>
@@ -107,22 +132,29 @@
   </nav>
 </header>
 
-<section class="hero">
-  <h1>Cosmic Decode</h1>
-  <p>Patterns from 5000 years ago, tested on 200+ lives.<br>Precision guidance for founders, CXOs, skeptics.</p>
-</section>
+<div class="content">
+  <h1>Knowledge Base</h1>
+  <p style="font-size:1.4rem;opacity:0.9;margin-bottom:60px;">
+    Free resources to deepen your understanding of cosmic patterns and inner inquiry.
+  </p>
 
-<div class="tier">
-  <h2>Signature Decode Session</h2>
-  <p>120-min deep-dive: Full chart + numerology + 3-year forecast. Recorded video + PDF report with timelines.</p>
-  <div class="price">₹24,000</div>
-  <a href="contact.html" class="btn">Book Decode →</a>
+  <div class="resources">
+    <div class="resource">
+      <h3>Substack Articles</h3>
+      <p>Weekly insights on Vedic patterns, life timing, and logical spirituality.</p>
+      <a href="https://substack.com/@astroshivrajofficial" target="_blank">Read on Substack →</a>
+    </div>
+
+    <div class="resource">
+      <h3>YouTube Channel</h3>
+      <p>Video breakdowns of transits, dasas, and rational inquiry.</p>
+      <a href="https://www.youtube.com/@AstroShivraj" target="_blank">Watch on YouTube →</a>
+    </div>
+  </div>
 </div>
 
-<p style="text-align:center;margin:80px 20px;font-size:1.1rem;opacity:0.8;">Limited to 20 sessions/month. Next slots: January 2026.</p>
-
 <footer>
-  © 2025 AstroShivraj • Decoded by Shivraj.
+  © 2025 AstroShivraj • Knowledge shared freely.
 </footer>
 
 </body>

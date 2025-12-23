@@ -19,14 +19,14 @@
     }
     header{
       padding:6px 20px;
+      background:#0d0c1a;
       position:fixed;
       top:0;left:0;right:0;
-      background:#0d0c1a;
       z-index:10;
       border-bottom:1px solid rgba(139,92,246,0.2);
     }
     nav{
-      max-width:1100px;
+      max-width:1280px;
       margin:0 auto;
       display:flex;
       justify-content:space-between;
@@ -37,8 +37,41 @@
       width:auto;
       display:block;
     }
-    .back a{color:#e0e0ff;text-decoration:none;font-weight:500;font-size:1.1rem;}
-    .back a:hover{color:var(--gold);}
+    .menu{
+      display:flex;
+      gap:3rem;
+      align-items:center;
+    }
+    .menu a{
+      color:#e0e0ff;
+      text-decoration:none;
+      font-weight:500;
+      font-size:1.05rem;
+      transition:color .3s;
+      white-space:nowrap;
+    }
+    .menu a:hover{color:var(--gold);}
+    .dropdown{position:relative;}
+    .dropdown:hover .dropdown-content{display:block;}
+    .dropdown-content{
+      display:none;
+      position:absolute;
+      top:100%;
+      left:50%;
+      transform:translateX(-50%);
+      background:#0d0c1a;
+      min-width:200px;
+      box-shadow:0 8px 16px rgba(0,0,0,0.5);
+      border-radius:10px;
+      padding:10px 0;
+      border:1px solid rgba(139,92,246,0.2);
+    }
+    .dropdown-content a{
+      display:block;
+      padding:10px 20px;
+      color:#e0e0ff;
+    }
+    .dropdown-content a:hover{background:rgba(139,92,246,0.2);color:var(--gold);}
     .container{max-width:1100px;margin:0 auto;padding:160px 20px 100px;}
     .grid{display:grid;grid-template-columns:1fr 2fr;gap:70px;align-items:start;}
     .photo{text-align:center;}
@@ -75,11 +108,21 @@
 
 <header>
   <nav>
-    <div class="back">
-      <a href="index.html">← Home</a>
-    </div>
     <div class="logo">
       <img src="logo.png" alt="AstroShivraj Logo">
+    </div>
+    <div class="menu">
+      <a href="index.html">Home</a>
+      <div class="dropdown">
+        <a href="#">Services</a>
+        <div class="dropdown-content">
+          <a href="cosmic.html">Cosmic Decode</a>
+          <a href="wisdom.html">Wisdom Path</a>
+        </div>
+      </div>
+      <a href="knowledge.html">Knowledge Base</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
     </div>
   </nav>
 </header>
@@ -104,15 +147,12 @@
   </div>
 
   <div class="video">
-  <iframe width="100%" 
-          height="450" 
-          src="https://www.youtube.com/embed/Oe2y_0Cg2ec" 
-          title="Ancient Vedic Astrologer Story - Varahamihira" 
-          frameborder="0" 
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-          referrerpolicy="strict-origin-when-cross-origin" 
-          allowfullscreen></iframe>
-</div>
+    <iframe src="https://www.youtube.com/watch?v=eCQnGMrvaPw" 
+            title="Shivraj Introduction" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen></iframe>
+  </div>
 </div>
 
 <footer>

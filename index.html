@@ -29,110 +29,62 @@
       width:auto;
       display:block;
     }
+    .menu{
+      display:flex;
+      gap:3rem;
+      align-items:center;
+    }
     .menu a{
       color:#e0e0ff;
       text-decoration:none;
-      margin-left:3rem;
       font-weight:500;
-      transition:.3s;
       font-size:1.05rem;
+      transition:color .3s;
+      white-space:nowrap;
     }
     .menu a:hover{color:var(--gold);}
-    .hero{
-      text-align:center;
-      padding:160px 20px 80px;
-      background:radial-gradient(circle at center,#1e1b4b,#0d0c1a);
-    }
-    .hero h1{
-      font-size:5.8rem;
-      font-weight:700;
-      background:linear-gradient(90deg,#c4b5fd,var(--gold));
-      -webkit-background-clip:text;
-      -webkit-text-fill-color:transparent;
-      margin-bottom:20px;
-    }
-    .hero p{font-size:1.9rem;font-weight:300;opacity:0.9;margin-bottom:40px;}
-    .intro{
-      max-width:900px;
-      margin:0 auto 100px;
-      text-align:center;
-      font-size:1.3rem;
-      opacity:0.9;
-      line-height:1.8;
-    }
-    .features{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-      gap:40px;
-      max-width:1200px;
-      margin:0 auto 120px;
-      padding:0 40px;
-    }
-    .feature{
-      background:rgba(49,46,129,0.25);
-      border-radius:20px;
-      padding:40px;
-      text-align:center;
-      border:1px solid rgba(251,191,36,0.2);
-    }
-    .feature h3{
-      font-size:2rem;
-      color:var(--gold);
-      margin-bottom:20px;
-    }
-    .feature p{font-size:1.15rem;opacity:0.9;}
-    .quote{
-      max-width:900px;
-      margin:100px auto;
-      text-align:center;
-      font-size:1.6rem;
-      font-style:italic;
-      opacity:0.85;
-      line-height:1.8;
-      padding:0 20px;
-    }
-    .doors{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:70px;
-      max-width:1300px;
-      margin:100px auto;
-      padding:0 40px;
-    }
-    .door{
-      background:rgba(49,46,129,0.25);
-      border-radius:28px;
-      overflow:hidden;
-      border:1px solid rgba(139,92,246,0.3);
-      transition:all .5s;
-    }
-    .door:hover{transform:translateY(-20px);box-shadow:0 40px 80px rgba(139,92,246,0.35);}
-    .img{
-      height:360px;
-      background-size:cover;
-      background-position:center;
-      position:relative;
-    }
-    .img::after{
-      content:'';
+    .dropdown{position:relative;}
+    .dropdown:hover .dropdown-content{display:block;}
+    .dropdown-content{
+      display:none;
       position:absolute;
-      inset:0;
-      background:linear-gradient(180deg,transparent 40%,rgba(13,12,26,0.95));
+      top:100%;
+      left:50%;
+      transform:translateX(-50%);
+      background:#0d0c1a;
+      min-width:200px;
+      box-shadow:0 8px 16px rgba(0,0,0,0.5);
+      border-radius:10px;
+      padding:10px 0;
+      border:1px solid rgba(139,92,246,0.2);
     }
+    .dropdown-content a{
+      display:block;
+      padding:10px 20px;
+      color:#e0e0ff;
+      text-decoration:none;
+    }
+    .dropdown-content a:hover{background:rgba(139,92,246,0.2);color:var(--gold);}
+    .hero{text-align:center;padding:160px 20px 80px;background:radial-gradient(circle at center,#1e1b4b,#0d0c1a);}
+    .hero h1{font-size:5.8rem;font-weight:700;background:linear-gradient(90deg,#c4b5fd,var(--gold));-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:20px;}
+    .hero p{font-size:1.9rem;font-weight:300;opacity:0.9;margin-bottom:40px;}
+    .intro{max-width:900px;margin:0 auto 100px;text-align:center;font-size:1.3rem;opacity:0.9;line-height:1.8;}
+    .features{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:40px;max-width:1200px;margin:0 auto 120px;padding:0 40px;}
+    .feature{background:rgba(49,46,129,0.25);border-radius:20px;padding:40px;text-align:center;border:1px solid rgba(251,191,36,0.2);}
+    .feature h3{font-size:2rem;color:var(--gold);margin-bottom:20px;}
+    .feature p{font-size:1.15rem;opacity:0.9;}
+    .quote{max-width:900px;margin:100px auto;text-align:center;font-size:1.6rem;font-style:italic;opacity:0.85;line-height:1.8;padding:0 20px;}
+    .doors{display:grid;grid-template-columns:1fr 1fr;gap:70px;max-width:1300px;margin:100px auto;padding:0 40px;}
+    .door{background:rgba(49,46,129,0.25);border-radius:28px;overflow:hidden;border:1px solid rgba(139,92,246,0.3);transition:all .5s;}
+    .door:hover{transform:translateY(-20px);box-shadow:0 40px 80px rgba(139,92,246,0.35);}
+    .img{height:360px;background-size:cover;background-position:center;position:relative;}
+    .img::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(13,12,26,0.95));}
     #cosmic{background-image:url('https://images.unsplash.com/photo-1462332420958-a05d1e3aba8a?w=1600');}
     #wisdom{background-image:url('https://images.unsplash.com/photo-1506318137071-a8e063b4bec0?w=1600');}
     .content{padding:60px 50px;text-align:center;}
     h2{font-family:'Cormorant Garamond',serif;font-size:3.2rem;margin-bottom:20px;color:var(--gold);}
     .content p{font-size:1.3rem;margin-bottom:40px;opacity:0.9;}
-    .btn{
-      padding:18px 52px;
-      font-size:1.25rem;
-      font-weight:600;
-      border-radius:60px;
-      text-decoration:none;
-      display:inline-block;
-      transition:.4s;
-    }
+    .btn{padding:18px 52px;font-size:1.25rem;font-weight:600;border-radius:60px;text-decoration:none;display:inline-block;transition:.4s;}
     .btn-c{background:linear-gradient(45deg,var(--violet),#ec4899);color:white;}
     .btn-w{background:transparent;border:1px solid var(--gold);color:var(--gold);}
     .btn-w:hover{background:var(--gold);color:#0d0c1a;}
@@ -143,7 +95,8 @@
       .hero{padding-top:130px;}
       header{padding:5px 20px;}
       .logo img{height:72px;}
-      .menu a{margin-left:1.5rem;font-size:1rem;}
+      .menu{gap:1.5rem;}
+      .menu a{font-size:0.95rem;}
       .features{grid-template-columns:1fr;padding:0 20px;}
     }
   </style>
@@ -157,6 +110,14 @@
     </div>
     <div class="menu">
       <a href="index.html">Home</a>
+      <div class="dropdown">
+        <a href="#">Services</a>
+        <div class="dropdown-content">
+          <a href="cosmic.html">Cosmic Decode</a>
+          <a href="wisdom.html">Wisdom Path</a>
+        </div>
+      </div>
+      <a href="knowledge.html">Knowledge Base</a>
       <a href="about.html">About</a>
       <a href="contact.html">Contact</a>
     </div>

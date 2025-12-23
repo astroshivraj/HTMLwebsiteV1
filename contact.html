@@ -18,7 +18,7 @@
       border-bottom:1px solid rgba(139,92,246,0.2);
     }
     nav{
-      max-width:1200px;
+      max-width:1280px;
       margin:auto;
       display:flex;
       justify-content:space-between;
@@ -29,8 +29,41 @@
       width:auto;
       display:block;
     }
-    .back a{color:#e0e0ff;text-decoration:none;font-weight:500;font-size:1.1rem;}
-    .back a:hover{color:var(--gold);}
+    .menu{
+      display:flex;
+      gap:3rem;
+      align-items:center;
+    }
+    .menu a{
+      color:#e0e0ff;
+      text-decoration:none;
+      font-weight:500;
+      font-size:1.05rem;
+      transition:color .3s;
+      white-space:nowrap;
+    }
+    .menu a:hover{color:var(--gold);}
+    .dropdown{position:relative;}
+    .dropdown:hover .dropdown-content{display:block;}
+    .dropdown-content{
+      display:none;
+      position:absolute;
+      top:100%;
+      left:50%;
+      transform:translateX(-50%);
+      background:#0d0c1a;
+      min-width:200px;
+      box-shadow:0 8px 16px rgba(0,0,0,0.5);
+      border-radius:10px;
+      padding:10px 0;
+      border:1px solid rgba(139,92,246,0.2);
+    }
+    .dropdown-content a{
+      display:block;
+      padding:10px 20px;
+      color:#e0e0ff;
+    }
+    .dropdown-content a:hover{background:rgba(139,92,246,0.2);color:var(--gold);}
     .container{
       max-width:1100px;
       margin:auto;
@@ -49,7 +82,7 @@
       transition:all .4s;
     }
     .card:hover{transform:translateY(-12px);box-shadow:0 30px 60px rgba(139,92,246,0.25);}
-    .flag{font-size:3.5rem;margin-bottom:15px;}
+    .flag{font-size:4.5rem;margin-bottom:15px;}
     .card h3{font-size:1.8rem;margin:15px 0;color:var(--gold);}
     .number{font-size:1.55rem;font-weight:600;margin:15px 0;letter-spacing:1px;}
     .wa-btn{
@@ -85,11 +118,21 @@
 
 <header>
   <nav>
-    <div class="back">
-      <a href="index.html">← Home</a>
-    </div>
     <div class="logo">
       <img src="logo.png" alt="AstroShivraj Logo">
+    </div>
+    <div class="menu">
+      <a href="index.html">Home</a>
+      <div class="dropdown">
+        <a href="#">Services</a>
+        <div class="dropdown-content">
+          <a href="cosmic.html">Cosmic Decode</a>
+          <a href="wisdom.html">Wisdom Path</a>
+        </div>
+      </div>
+      <a href="knowledge.html">Knowledge Base</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
     </div>
   </nav>
 </header>
@@ -101,7 +144,7 @@
   <div class="cards">
 
     <div class="card">
-      <div class="flag">🇮🇳 India</div>
+      <div class="flag">🇮🇳</div>
       <h3>India WhatsApp & Call</h3>
       <div class="number">+91 97111 11274</div>
       <a href="https://wa.me/919711111274?text=Namaste%20Shivraj%2C%20I%20would%20like%20to%20book%20a%20Cosmic%20Decode%20reading..." 
@@ -110,7 +153,7 @@
     </div>
 
     <div class="card">
-      <div class="flag">🇺🇸 USA</div>
+      <div class="flag">🇺🇸</div>
       <h3>USA WhatsApp & Call</h3>
       <div class="number">+1 (971) 238-4730</div>
       <a href="https://wa.me/19712384730?text=Hi%20Shivraj%2C%20I%20found%20you%20online%20and%20would%20love%20to%20know%20more..." 
@@ -120,7 +163,7 @@
 
     <div class="card email-card">
       <h3 style="font-size:2rem;color:var(--gold);">Prefer Email?</h3>
-      <p><a href="mailto:hello@astroshivraj.in">hello@astroshivraj.in</a></p>
+      <p><a href="mailto:hello@astroshivraj.in">hello@astroshivraj.com</a></p>
       <p style="margin-top:15px;opacity:0.8;">Replies within 24–48 hours</p>
     </div>
 
