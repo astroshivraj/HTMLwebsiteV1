@@ -4,41 +4,112 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About — AstroShivraj</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Cormorant+Garamond:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
-    :root{--gold:#fbbf24;--violet:#8b5cf6;--indigo:#312e81;--text:#e0e0ff;--bg:#0d0c1a;}
+    :root{--gold:#fbbf24;--violet:#8b5cf6;--indigo:#312e81;}
     *{margin:0;padding:0;box-sizing:border-box;}
     body{
       font-family:'Inter',sans-serif;
-      background:var(--bg);
-      color:var(--text);
+      background:#0d0c1a;
+      color:#e0e0ff;
       line-height:1.9;
-      font-size:18px; /* Slightly increased base for better consistency */
+      font-size:18px;
       overflow-x:hidden;
       font-weight:400;
     }
 
-    h1, h3{
-      font-family:'Inter',sans-serif !important;
-      font-weight:600;
+    header{
+      padding:10px 20px;
+      background:#0d0c1a;
+      position:fixed;
+      top:0;left:0;right:0;
+      z-index:1000;
+      border-bottom:1px solid rgba(139,92,246,0.2);
     }
-
-    header{padding:15px 20px;background:var(--bg);position:fixed;top:0;left:0;right:0;z-index:1000;border-bottom:1px solid rgba(139,92,246,0.25);backdrop-filter:blur(10px);}
-    nav{max-width:1280px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;}
-    .logo img{height:80px;width:auto;filter:drop-shadow(0 0 10px rgba(251,191,36,0.4));}
-    .menu-desktop{display:flex;gap:3rem;}
-    .menu-desktop a{color:var(--text);text-decoration:none;font-weight:500;transition:color 0.4s;}
+    nav{
+      max-width:1280px;
+      margin:0 auto;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+    }
+    .logo img{height:72px;width:auto;display:block;}
+    .menu-desktop{
+      display:flex;
+      gap:2.5rem;
+      align-items:center;
+    }
+    .menu-desktop a{
+      color:#e0e0ff;
+      text-decoration:none;
+      font-weight:500;
+      font-size:1.05rem;
+      transition:color .3s;
+    }
     .menu-desktop a:hover{color:var(--gold);}
+    .dropdown{position:relative;}
+    .dropdown:hover .dropdown-content{display:block;}
+    .dropdown-content{
+      display:none;
+      position:absolute;
+      top:100%;
+      left:50%;
+      transform:translateX(-50%);
+      background:#0d0c1a;
+      min-width:200px;
+      box-shadow:0 8px 16px rgba(0,0,0,0.5);
+      border-radius:10px;
+      padding:10px 0;
+      border:1px solid rgba(139,92,246,0.2);
+    }
+    .dropdown-content a{
+      display:block;
+      padding:12px 20px;
+      color:#e0e0ff;
+    }
+    .dropdown-content a:hover{background:rgba(139,92,246,0.2);color:var(--gold);}
 
-    .container{max-width:1200px;margin:0 auto;padding:160px 20px 120px;}
+    .hamburger{
+      display:none;
+      flex-direction:column;
+      gap:6px;
+      cursor:pointer;
+    }
+    .hamburger span{
+      width:30px;
+      height:3px;
+      background:var(--gold);
+      transition:0.3s;
+    }
+    .mobile-menu{
+      display:none;
+      position:absolute;
+      top:100%;
+      left:0;
+      right:0;
+      background:#0d0c1a;
+      border-top:1px solid rgba(139,92,246,0.3);
+      flex-direction:column;
+      padding:20px;
+      text-align:center;
+    }
+    .mobile-menu a{
+      padding:15px;
+      font-size:1.2rem;
+      color:#e0e0ff;
+      text-decoration:none;
+    }
+    .mobile-menu a:hover{color:var(--gold);}
+    .mobile-menu.active{display:flex;}
+
+    .container{max-width:1200px;margin:0 auto;padding:140px 20px 120px;}
     h1{font-size:clamp(3.2rem,8vw,5rem);color:var(--gold);text-align:center;margin-bottom:100px;letter-spacing:1px;}
 
     .section{display:grid;grid-template-columns:1fr;gap:60px;margin-bottom:120px;align-items:center;position:relative;}
     .section img{width:100%;max-width:100%;height:auto;border-radius:28px;border:2px solid rgba(251,191,36,0.4);box-shadow:0 30px 80px rgba(0,0,0,0.7);transition:transform 0.6s ease, box-shadow 0.6s ease;}
     .section img:hover{transform:scale(1.03);box-shadow:0 40px 100px rgba(251,191,36,0.2);}
     .text p{margin-bottom:2rem;opacity:0.94;}
-    /* Removed custom font-size overrides for paragraphs – now all use base 18px */
-    .text p.lead{font-weight:500;opacity:1;} /* Only bolder and full opacity for lead */
+    .text p.lead{font-weight:500;opacity:1;}
     .divider{height:1px;background:linear-gradient(90deg,transparent,var(--violet,0.3),var(--gold),var(--violet,0.3),transparent);margin:120px 0;}
 
     .paths{display:grid;grid-template-columns:1fr;gap:50px;}
@@ -48,7 +119,6 @@
 
     .closing{text-align:center;max-width:900px;margin:0 auto;}
     .closing p{margin-bottom:1.8rem;}
-    /* Removed custom font-size – uses base */
 
     footer{text-align:center;padding:100px 20px;opacity:0.7;font-size:1rem;color:var(--gold);}
 
@@ -61,19 +131,47 @@
     @media(min-width:1200px){
       .section{gap:100px;}
     }
+
+    @media(max-width:968px){
+      .menu-desktop{display:none;}
+      .hamburger{display:flex;}
+      .logo img{height:60px;}
+      header{padding:8px 15px;}
+    }
   </style>
 </head>
 <body>
 
 <header>
   <nav>
-    <div class="logo"><a href="index.html"><img src="logo.png" alt="AstroShivraj"></a></div>
+    <div class="logo">
+      <a href="index.html"><img src="logo.png" alt="AstroShivraj Logo"></a>
+    </div>
     <div class="menu-desktop">
       <a href="index.html">Home</a>
+      <div class="dropdown">
+        <a href="#">Services ▾</a>
+        <div class="dropdown-content">
+          <a href="cosmic.html">Cosmic Decode</a>
+          <a href="wisdom.html">Wisdom Path</a>
+        </div>
+      </div>
+      <a href="knowledge.html">Knowledge Base</a>
       <a href="about.html">About</a>
       <a href="contact.html">Contact</a>
     </div>
+    <div class="hamburger">
+      <span></span><span></span><span></span>
+    </div>
   </nav>
+  <div class="mobile-menu">
+    <a href="index.html">Home</a>
+    <a href="cosmic.html">Cosmic Decode</a>
+    <a href="wisdom.html">Wisdom Path</a>
+    <a href="knowledge.html">Knowledge Base</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </div>
 </header>
 
 <div class="container">
@@ -86,6 +184,7 @@
     </div>
   </div>
 
+  <!-- The rest of your content remains exactly the same -->
   <div class="section reverse">
     <div class="text">
       <p>One unremarkable day, he arrived at an IIT campus—a bastion of higher learning where brilliant minds converged—to study the intricacies of engineering, drawn by the promise of a world built on clean logic and endless code.</p>
@@ -150,6 +249,12 @@
 <footer>
   © 2026 AstroShivraj • The silence was always speaking.
 </footer>
+
+<script>
+  document.querySelector('.hamburger').addEventListener('click', function(){
+    document.querySelector('.mobile-menu').classList.toggle('active');
+  });
+</script>
 
 </body>
 </html>
