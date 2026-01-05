@@ -3,55 +3,63 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About Shivraj — AstroShivraj</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Cormorant+Garamond:wght@400;500;600&display=swap" rel="stylesheet">
+  <title>About — AstroShivraj</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
-    :root{--gold:#fbbf24;--violet:#8b5cf6;--indigo:#312e81;--text:#e0e0ff;}
+    :root{--gold:#fbbf24;--violet:#8b5cf6;--indigo:#312e81;--text:#e0e0ff;--bg:#0d0c1a;}
     *{margin:0;padding:0;box-sizing:border-box;}
-    body{font-family:'Inter',sans-serif;background:#0d0c1a;color:var(--text);line-height:1.8;font-size:17px;}
-    
-    /* Same header as before */
-    header{padding:10px 20px;background:#0d0c1a;position:fixed;top:0;left:0;right:0;z-index:1000;border-bottom:1px solid rgba(139,92,246,0.2);}
-    nav{max-width:1280px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;}
-    .logo img{height:72px;width:auto;display:block;}
-    .menu-desktop{display:flex;gap:2.5rem;align-items:center;}
-    .menu-desktop a{color:#e0e0ff;text-decoration:none;font-weight:500;font-size:1.05rem;transition:color .3s;}
-    .menu-desktop a:hover{color:var(--gold);}
-    .dropdown{position:relative;}
-    .dropdown:hover .dropdown-content{display:block;}
-    .dropdown-content{display:none;position:absolute;top:100%;left:50%;transform:translateX(-50%);background:#0d0c1a;min-width:200px;box-shadow:0 8px 16px rgba(0,0,0,0.5);border-radius:10px;padding:10px 0;border:1px solid rgba(139,92,246,0.2);}
-    .dropdown-content a{display:block;padding:12px 20px;color:#e0e0ff;}
-    .dropdown-content a:hover{background:rgba(139,92,246,0.2);color:var(--gold);}
-    .hamburger{display:none;flex-direction:column;gap:6px;cursor:pointer;}
-    .hamburger span{width:30px;height:3px;background:var(--gold);}
-    .mobile-menu{display:none;position:absolute;top:100%;left:0;right:0;background:#0d0c1a;border-top:1px solid rgba(139,92,246,0.3);flex-direction:column;padding:20px;text-align:center;}
-    .mobile-menu a{padding:15px;font-size:1.2rem;color:#e0e0ff;text-decoration:none;}
-    .mobile-menu a:hover{color:var(--gold);}
-    .mobile-menu.active{display:flex;}
+    body{
+      font-family:'Inter',sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.9;
+      font-size:18px; /* Slightly increased base for better consistency */
+      overflow-x:hidden;
+      font-weight:400;
+    }
 
-    .container{max-width:1100px;margin:0 auto;padding:140px 20px 100px;}
-    .grid{display:grid;grid-template-columns:1fr;gap:50px;align-items:start;text-align:center;}
-    .photo img{width:100%;max-width:320px;border-radius:20px;border:4px solid var(--gold);box-shadow:0 20px 40px rgba(0,0,0,0.6);}
-    .text h1{font-family:'Cormorant Garamond',serif;font-size:clamp(2.8rem,8vw,4rem);color:var(--gold);margin-bottom:30px;}
-    .text p{font-size:1.05rem;margin-bottom:1.8rem;opacity:0.92;}
-    .text p:first-of-type{font-size:1.25rem;font-weight:500;opacity:1;}
-    .video{margin-top:80px;text-align:center;}
-    .video iframe{width:100%;max-width:800px;height:450px;border-radius:20px;border:3px solid var(--gold);}
-    footer{text-align:center;padding:80px 20px;opacity:0.6;font-size:0.95rem;}
+    h1, h3{
+      font-family:'Inter',sans-serif !important;
+      font-weight:600;
+    }
+
+    header{padding:15px 20px;background:var(--bg);position:fixed;top:0;left:0;right:0;z-index:1000;border-bottom:1px solid rgba(139,92,246,0.25);backdrop-filter:blur(10px);}
+    nav{max-width:1280px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;}
+    .logo img{height:80px;width:auto;filter:drop-shadow(0 0 10px rgba(251,191,36,0.4));}
+    .menu-desktop{display:flex;gap:3rem;}
+    .menu-desktop a{color:var(--text);text-decoration:none;font-weight:500;transition:color 0.4s;}
+    .menu-desktop a:hover{color:var(--gold);}
+
+    .container{max-width:1200px;margin:0 auto;padding:160px 20px 120px;}
+    h1{font-size:clamp(3.2rem,8vw,5rem);color:var(--gold);text-align:center;margin-bottom:100px;letter-spacing:1px;}
+
+    .section{display:grid;grid-template-columns:1fr;gap:60px;margin-bottom:120px;align-items:center;position:relative;}
+    .section img{width:100%;max-width:100%;height:auto;border-radius:28px;border:2px solid rgba(251,191,36,0.4);box-shadow:0 30px 80px rgba(0,0,0,0.7);transition:transform 0.6s ease, box-shadow 0.6s ease;}
+    .section img:hover{transform:scale(1.03);box-shadow:0 40px 100px rgba(251,191,36,0.2);}
+    .text p{margin-bottom:2rem;opacity:0.94;}
+    /* Removed custom font-size overrides for paragraphs – now all use base 18px */
+    .text p.lead{font-weight:500;opacity:1;} /* Only bolder and full opacity for lead */
+    .divider{height:1px;background:linear-gradient(90deg,transparent,var(--violet,0.3),var(--gold),var(--violet,0.3),transparent);margin:120px 0;}
+
+    .paths{display:grid;grid-template-columns:1fr;gap:50px;}
+    .path{background:rgba(49,46,129,0.3);border:1px solid rgba(251,191,36,0.35);border-radius:32px;padding:50px;transition:all 0.5s;backdrop-filter:blur(8px);}
+    .path:hover{transform:translateY(-10px);box-shadow:0 20px 50px rgba(251,191,36,0.15);}
+    .path h3{color:var(--gold);font-size:2.4rem;margin-bottom:24px;}
+
+    .closing{text-align:center;max-width:900px;margin:0 auto;}
+    .closing p{margin-bottom:1.8rem;}
+    /* Removed custom font-size – uses base */
+
+    footer{text-align:center;padding:100px 20px;opacity:0.7;font-size:1rem;color:var(--gold);}
 
     @media(min-width:900px){
-      .grid{grid-template-columns:1fr 2fr;gap:70px;text-align:left;}
-      .video iframe{height:450px;}
+      .section{grid-template-columns:1fr 1.4fr;gap:80px;}
+      .section.reverse{grid-template-columns:1.4fr 1fr;}
+      .paths{grid-template-columns:repeat(2,1fr);gap:60px;}
     }
-    @media(max-width:968px){
-      .menu-desktop{display:none;}
-      .hamburger{display:flex;}
-      .logo img{height:60px;}
-      header{padding:8px 15px;}
-      .container{padding-top:120px;}
-    }
-    @media(max-width:600px){
-      .video iframe{height:300px;}
+
+    @media(min-width:1200px){
+      .section{gap:100px;}
     }
   </style>
 </head>
@@ -59,72 +67,89 @@
 
 <header>
   <nav>
-    <div class="logo">
-      <a href="index.html"><img src="logo.png" alt="AstroShivraj Logo"></a>
-    </div>
+    <div class="logo"><a href="index.html"><img src="logo.png" alt="AstroShivraj"></a></div>
     <div class="menu-desktop">
       <a href="index.html">Home</a>
-      <div class="dropdown">
-        <a href="#">Services ▾</a>
-        <div class="dropdown-content">
-          <a href="cosmic.html">Cosmic Decode</a>
-          <a href="wisdom.html">Wisdom Path</a>
-        </div>
-      </div>
-      <a href="knowledge.html">Knowledge Base</a>
       <a href="about.html">About</a>
       <a href="contact.html">Contact</a>
     </div>
-    <div class="hamburger">
-      <span></span><span></span><span></span>
-    </div>
   </nav>
-  <div class="mobile-menu">
-    <a href="index.html">Home</a>
-    <a href="cosmic.html">Cosmic Decode</a>
-    <a href="wisdom.html">Wisdom Path</a>
-    <a href="knowledge.html">Knowledge Base</a>
-    <a href="about.html">About</a>
-    <a href="contact.html">Contact</a>
-  </div>
 </header>
 
 <div class="container">
-  <div class="grid">
-    <div class="photo">
-      <img src="shivraj.png" alt="Shivraj">
-    </div>
+  <h1>About</h1>
 
+  <div class="section" style="margin-top:-40px;">
+    <img src="shivraj.png" alt="Shivraj – your personal portrait">
     <div class="text">
-      <h1>Shivraj</h1>
-      <p>I am no one special — just a boy from a small town who walked into an IIT campus believing life runs on logic, code, and ambition.</p>
-      <p>While building software for startups and corporates, I quietly kept stumbling into ancient maps — Vedic astrology, Lo Shu numerology, the Gita, Ashtavakra. For over twelve years I tested them on friends, family, and eventually strangers — all for free — the way an engineer runs experiments. The accuracy was impossible to ignore.</p>
-      <p>Saturn returns hit exactly at 28–30. Rahu periods brought the exact illusions predicted. Name spelling changes shifted fortunes within months. I tracked hundreds of charts. The patterns never lied.</p>
-      <p>At some point the seeker himself dissolved. What remained is this space — AstroShivraj — where two things are offered plainly:</p>
-      <p>• <strong>Cosmic Decode</strong> — ruthless, evidence-based astrology & numerology for high-achievers who want clarity on career moves, relationships, wealth cycles, and life timing.</p>
-      <p>• <strong>Wisdom Path</strong> — the final logical inquiry that ends the illusion of a separate self. No rituals. No guru worship. Just permanent freedom.</p>
-      <p>No rudraksha. No titles. No drama.<br>Only patterns that work, and the silence beyond them.</p>
-      <p>Whoever you are — founder, skeptic, seeker — you are already welcome.</p>
+      <p class="lead">In a quiet town where the nights were deeper than most, a boy learned early that the stars sometimes lingered a little longer over certain roofs, as if listening.</p>
     </div>
   </div>
 
-  <div class="video">
-    <iframe src="https://www.youtube.com/embed/eCQnGMrvaPw" 
-            title="Shivraj Introduction" 
-            frameborder="0" 
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-            allowfullscreen></iframe>
+  <div class="section reverse">
+    <div class="text">
+      <p>One unremarkable day, he arrived at an IIT campus—a bastion of higher learning where brilliant minds converged—to study the intricacies of engineering, drawn by the promise of a world built on clean logic and endless code.</p>
+      <p>There, amid lecture halls and labs filled with the soft click of keyboards, he immersed himself in his studies for those formative years.</p>
+      <p>After graduating, he ventured into the professional world, crafting software for fleeting startups and enduring corporates—worlds that rose and fell like breaths in sleep.</p>
+    </div>
+    <img src="https://assets.isu.pub/document-structure/230105211425-eca07d61a65b2490904c5f6a8e24421e/v1/7c65bec549f0232da3be1116726a4b3e.jpeg" alt="Modern IIT campus architecture">
+  </div>
+
+  <div class="section">
+    <img src="https://unfocussed.com/cdn/shop/articles/AI_Art_for_Writers.png?crop=center&format=jpg&height=1200&v=1734736026&width=2400" alt="Late-night desk with emerging ancient wisdom">
+    <div class="text">
+      <p>Yet, in the quiet hours between deadlines, ancient maps began to appear—as if the night sky itself unfolded them on his desk.</p>
+      <p>Vedic charts shimmered faintly under the glow of his laptop screen. Lo Shu grids emerged in the patterns of falling leaves. Lines from the Bhagavad Gita and Ashtavakra Gita drifted through the air like incense no one else could smell.</p>
+      <p>He treated them as he treated any unknown variable: with gentle experiments.</p>
+      <p>He drew charts for friends over late-night chai, for family during festival visits, for strangers who wrote to him out of nowhere. All without charge, the way one tests a theorem in solitude.</p>
+    </div>
+  </div>
+
+  <div class="section reverse">
+    <div class="text">
+      <p>Over twelve years, he watched hundreds of lives unfold. The sidereal zodiac held true to the fixed stars. The 27 Nakshatras traced the moon’s subtle mansions. The Vimshottari Dasha wove time into a precise 120-year tapestry.</p>
+      <p>The patterns were simply there—no fanfare, no astonishment. Just the quiet certainty of rain arriving when the clouds gather.</p>
+    </div>
+    <img src="https://people.com/thmb/JFLmovM063ME-krSio6srhkmUcY=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc():focal(749x0:751x2)/horoscope-vedicastrology-wheel-051024-f777a7111b7d41768391af605cbe07c6.jpg" alt="Beautiful Vedic astrology chart">
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="section">
+    <img src="https://thumbs.dreamstime.com/b/painting-features-serene-landscape-misty-mountains-lake-calm-waters-reflecting-soft-dawn-hues-410427438.jpg" alt="Misty dawn symbolizing dissolution of the self">
+    <div class="text">
+      <p>One evening, without warning, the boy who had been seeking looked up and found no one looking back.</p>
+      <p>The separate self dissolved as gently as mist at dawn. What remained was an open space, named <strong>AstroShivraj</strong>.</p>
+      <p>In this space, two paths lie side by side, ordinary as footpaths yet luminous under moonlight.</p>
+    </div>
+  </div>
+
+  <div class="paths">
+    <div class="path">
+      <h3>Cosmic Decode</h3>
+      <p>Clear readings in Vedic astrology and numerology, offered to those navigating the turning points of life—careers that shift like seasons, relationships that deepen or fade, cycles of abundance and reflection.</p>
+      <p>Guidance as straightforward as starlight.</p>
+    </div>
+    <div class="path">
+      <h3>Wisdom Path</h3>
+      <p>A quiet pointing to what is already here: the boundless awareness beyond the story of a separate self.</p>
+      <p>No ceremonies. No devotion required. Just the gentle recognition of freedom that has never been absent.</p>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="closing">
+    <p>No beads, no titles, no elaborate rites.</p>
+    <p>Only the patterns that reveal themselves, and the vast silence that holds everything.</p>
+    <p>If you are a founder chasing horizons, a skeptic honoring your doubts, or someone simply tired of searching—this space has always been waiting, the way the sky waits for night.</p>
+    <p><strong>Come when you’re ready.</strong><br>The door was never closed.<br><strong>You are already here.</strong></p>
   </div>
 </div>
 
 <footer>
-  © 2025 AstroShivraj • The patterns were always there. I just learned to read them.
+  © 2026 AstroShivraj • The silence was always speaking.
 </footer>
 
-<script>
-  document.querySelector('.hamburger').addEventListener('click', function(){
-    document.querySelector('.mobile-menu').classList.toggle('active');
-  });
-</script>
 </body>
 </html>
